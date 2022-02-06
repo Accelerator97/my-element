@@ -1,7 +1,9 @@
 import Button from '../packages/button/index.js'
+import Card from '../packages/card/index.js'
 
 const components = [
-    Button
+    Button,
+    Card
 ]
 
 const install = function (Vue, opts = {}) {

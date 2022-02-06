@@ -1,1 +1,47 @@
-@import "./config.scss"
+@import "./config.scss";
+
+// Sass 字符串的起始索引值从 1 开始，记住不是 0
+// inspect 返回一个包含该值的字符串作为其Sass表示
+@function selectorToString($selector) {
+    $selector: inspect($selector);
+    $selector: str-slice($selector, 2, -2);
+    @return $selector;
+};
+
+//是否含有 --
+@function containsModifier($selector) {
+    $selector: selectorToString($selector);
+  
+    @if str-index($selector, $modifier-separator) {
+      @return true;
+    } @else {
+      @return false;
+    }
+};
+
+//是否含有is-
+@function containWhenFlag($selector) {
+    $selector: selectorToString($selector);
+  
+    @if str-index($selector, '.' + $state-prefix) {
+      @return true
+    } @else {
+      @return false
+    }
+};
+
+//是否含有:
+@function containPseudoClass($selector) {
+    $selector: selectorToString($selector);
+  
+    @if str-index($selector, ':') {
+      @return true
+    } @else {
+      @return false
+    }
+};
+
+  
+@function hitAllSpecialNestRule($selector) {
+    @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
