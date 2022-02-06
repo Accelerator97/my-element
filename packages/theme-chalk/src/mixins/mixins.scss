@@ -1,0 +1,14 @@
+// @mixin 指令允许我们定义一个可以在整个样式表中重复使用的样式
+// @include 指令可以将混入（mixin）引入到文档中
+
+@import "./function.scss";
+
+@mixin b($block){
+    $B:$namespace + '-' + $block !global;
+
+    // $B: xxx：声明一个叫 B 的变量。
+    // .#{$B}：$B 取变量 B，#{} 拼接。假设 B 的值是 class 那么 .#{$B} 就等于 .class
+    .#{$B}{
+        @content
+    }
+}

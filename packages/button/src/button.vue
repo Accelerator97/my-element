@@ -1,5 +1,5 @@
 <template>
-    <button>
+    <button class="ben-button">
         {{size}}
     </button>
 </template>
