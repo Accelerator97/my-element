@@ -1,3 +1,6 @@
+/**
+ * 利用gulp处理样式文件，并且通过cp-cli插件将打包后生成的样式文件复制一份到根目录的lib/theme-chalk
+ */
 const { series, src, dest } = require('gulp')
 const sass = require('gulp-sass')
 const autoPrefixer = require('gulp-autoprefixer') //添加厂商前缀

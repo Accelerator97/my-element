@@ -1,3 +1,7 @@
+/**
+ * 自动在packages/src/index.scss中引入各个组件的样式文件
+ */
+
 var fs = require('fs')
 var path = require('path')
 var themes = ['theme-chalk']

@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "file-save":"^0.2.0",
+    "uppercamelcase":"^1.1.0",
     "cp-cli":"^1.0.2",
     "gulp":"^4.0.0",
     "gulp-autoprefixer":"^6.0.0",
